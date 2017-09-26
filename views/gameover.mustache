@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Hangman </title>
+
+    <link rel="stylesheet" href="./public/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <form class="f-header--form" method="post">
+          <button class="btn btn_reg" type="submit" formaction="/hangman/easy/newgame"><span> New Word </span></button>
+          <button class="btn btn_reg" type="submit" formaction="/hangman/easy/hangme"><span> Hang me </span></button>
+          <button class="btn" id="playagain" type="submit" formaction="/hangman/easy/playagain"><span> Play again </span></button>
+        </form>
+      </header>
+      <!--  Main -->
+      <div class="c-mainCont">
+        <div class="c-hiddenLet f-hiddenLet">
+          <span> " </span>
+        {{#ingameWord}}
+          <span class="c-hiddenLet--let"> {{.}} </span>
+        {{/ingameWord}}
+          <span> " </span>
+        </div>
+      </div>
+      {{> resultPartial}}
+
+
+      <!-- Wrong guesses -->
+      <div class="c-submainCont">
+        <div>
+          <div class="cf-wrongGss">
+            <div>
+              <span class="f-wrongGss--count"> {{availGuesses}} </span>
+              <span id="guessesleft"> guesses left </span>
+            </div>
+            <div>
+              <span id="wrongGss"> Wrong Guesses : </span>
+            {{#wrongLetter}}
+              <span class="cfs-wrongGss--let"> {{.}} </span>
+            {{/wrongLetter}}
+            </div>
+          </div>
+          <div class = "c-gssFields">
+            <form method="post">
+              <input type="text" name="guessedLetter" class="cfs-inputField" id="guessedLetter" placeholder="Guess a letter">
+              <button class="btn btn_reg" id="guessBtn" type="submit" formaction="/hangman/easy/ingame"> << Guess! >> </button>
+              <input type="text" name="guessedWord" class="cfs-inputField" id="guessedWord" placeholder="Guess the word">
+            </form>
+            <div id="errors">
+              <p> {{message}} </p>
+            </div>
+        </div>
+      </div>
+    </main>
+
+    <footer><div></div></footer>
+    <!-- <script src="./../public/js/counterColors.js"></script> -->
+</body>
+</html>

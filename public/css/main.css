@@ -1,0 +1,225 @@
+body{
+  box-sizing: border-box;
+  color: #2d2c2c;
+  font-family: 'Gloria Hallelujah', cursive;
+  height: 100%;
+  margin: 0 auto;
+  min-width: 639px;
+}
+
+main{
+  margin: 30px 100px 0;
+}
+
+input, button{
+  font-family: 'Gloria Hallelujah', cursive;
+  outline: none;
+}
+
+h1, h2, h3, h4, h5 {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.btn{
+  background-color: transparent;
+  border: none;
+  border-radius: 23px;
+  color: #10cc5e;
+  cursor: pointer;
+  font-size: 32px;
+  margin: 2px 40px;
+  padding: 8px 32px;
+  text-align: center;
+}
+
+.btn_reg:hover{
+  color: #e5e0e0;
+  background-color: black;
+  transition: 0.6s;
+}
+
+#playagain {
+  color: #10cc5e;
+}
+
+#playagain span{
+  cursor: pointer;
+  position: relative;
+  transition: 0.4s;
+}
+
+#playagain span:after{
+  content: ">>";
+  opacity: 0;
+  position: absolute;
+    top: 0;
+    right: -40px;
+  transition: 0.4s;
+}
+
+#playagain:hover span{
+  padding-right: 30px;
+  transition: 0.4s;
+}
+
+#playagain:hover span:after{
+  opacity: 1;
+  right: -56px;
+  transition: 0.4s;
+}
+
+/* NOTE: Header */
+
+/* NOTE: Main */
+.c-mainCont{
+  margin: 4% 100px 10px;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+.c-hiddenLet{
+  margin: 128px 4% 5px 0;
+
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: row nowrap;
+}
+
+.f-hiddenLet{
+  font-size: 60px;
+  text-align: right;
+}
+
+.c-hiddenLet--let{
+  padding: 0 15px;
+}
+
+.c-alertMsg{
+  margin: 60px auto;
+
+  display: flex;
+  justify-content: center;
+}
+
+.sf-alertMsg{
+  color: red;
+  font-size: 60px;
+  text-align: center;
+  transition: 0.8s;
+}
+
+
+/* NOTE: Wrong guesses */
+.c-submainCont{
+  box-sizing: border-box;
+  margin: 0 20px;
+}
+
+.cf-wrongGss{
+  font-size: 24px;
+
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  align-self: flex-start;
+  align-content: flex-start;
+}
+
+.f-wrongGss--count{
+  font-size: 80px;
+}
+
+.f-wrongGss--count::before{
+  content: "<<" ;
+  font-size: 40px;
+}
+
+.f-wrongGss--count::after{
+  content: ">>" ;
+  font-size: 40px;
+  position: relative;
+    left: 147px;
+}
+
+.c-wrongGss-let{
+  margin: 0 87px;
+}
+
+#wrongGss{
+  color: grey;
+  margin-right: 26px;
+}
+
+#wrongGss:hover{
+  color: red;
+}
+
+#guessesleft{
+  font-size: 20px;
+  align-self: flex-end;
+  padding: 0 20px;
+  position: relative;
+    bottom: 10px;
+    right: 81px;
+}
+
+.cfs-wrongGss--let{
+  color: #10cc5e;
+  padding: 0 5px;
+  text-decoration: line-through;
+  transition: 0.3s;
+}
+
+/* NOTE: Guess fields */
+.c-gssFields{
+  margin: 60px auto 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.cfs-inputField{
+  background: transparent;
+  border: none;
+  border-bottom: dotted #ddd9d9 2px;
+  color: #10cc5e;
+  font-size: 36px;
+  margin: 0 17px;
+  padding: 2px 0;
+  text-align: center;
+  width: 300px;
+}
+
+#guessBtn{
+  /*border: dotted #e5e0e0 thin;*/
+  margin: 0 50px;
+  padding: 8px 40px;
+  position: relative;
+    top: 2px;
+}
+
+#guessBtn:hover{
+  color: #e5e0e0;
+  background-color: #10cc5e;
+}
+
+
+/* NOTE: Footer */
+footer{
+  background-color: black;
+  border-bottom: solid black;
+  height: 14%;
+  position: fixed;
+    bottom: 0px;
+  width: 100%;
+  z-index: -1;
+}
+
+#errors{
+  color: red;
+}
